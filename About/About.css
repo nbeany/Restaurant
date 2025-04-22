@@ -1,0 +1,240 @@
+
+body {
+    font-family: 'lacquer';
+    color: #333;
+}
+
+
+.navbar {
+    padding: 15px 0;
+    transition: all 0.3s;
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* About Hero Section */
+
+
+
+    .our-story-section {
+        position: relative;
+        
+    }
+    
+    .section-header {
+        position: relative;
+    }
+    
+    .title-divider {
+        
+        width: 80px;
+        height: 4px;
+        background: #ffa500;
+        margin: 1rem 0;
+        border-radius: 2px;
+    }
+    
+    .story-gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        grid-template-areas: 
+            "main main"
+            "secondary1 secondary2";
+    }
+    
+    .gallery-item-main {
+        grid-area: main;
+        height: 300px;
+    }
+    
+    .gallery-item-secondary {
+        height: 200px;
+    }
+    
+    .gallery-item-main img,
+    .gallery-item-secondary img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .story-timeline {
+        position: relative;
+        padding-left: 90px;
+    }
+    
+    .timeline-item {
+        position: relative;
+        padding-bottom: 2rem;
+    }
+    
+    .timeline-item:last-child {
+        padding-bottom: 0;
+    }
+    
+    .timeline-icon {
+        position: absolute;
+        left: -90px;
+        top: 0;
+    }
+    
+    .icon-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+    }
+    
+    .bg-brand {
+        background-color: #ffa500;
+    }
+    
+    .timeline-content {
+        padding-top: 0.5rem;
+    }
+    
+    @media (max-width: 992px) {
+        .story-gallery-grid {
+            grid-template-areas: 
+                "main main"
+                "secondary1 secondary2";
+        }
+        
+        .gallery-item-main {
+            height: 250px;
+        }
+        
+        .gallery-item-secondary {
+            height: 150px;
+        }
+        
+        .story-timeline {
+            padding-left: 70px;
+        }
+        
+        .timeline-icon {
+            left: -70px;
+        }
+        
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            font-size: 1rem;
+        }
+    }
+
+
+
+.text-brand {
+    color:#ffa500 ;
+}
+
+.team-member-card {
+    position: relative;
+    margin-top: 80px;
+    transition: all 0.3s ease;
+}
+
+.profile-image-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: white;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.team-card-content {
+    padding: 70px 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-member-card:hover .profile-image {
+    transform: scale(1.1);
+}
+
+.team-member-card:hover .team-card-content {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color:#ffa500 !important;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    .story-img-gallery {
+        margin-top: 30px;
+    }
+    
+    .team-card {
+        margin-bottom: 20px;
+    }
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+
+section {
+    padding: 80px 0;
+}
+
+.rounded-lg {
+    border-radius: 15px;
+}
+
+.shadow-lg {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}

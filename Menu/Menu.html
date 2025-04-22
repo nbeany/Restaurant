@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Menu.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#" style="font-family: 'Lacquer'"
+          >Luminary Fast Foods</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../Home/Home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../Menu/Menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../About/About.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- modal -->
+    <div class="modal fade" id="responseModal" tabindex="-1">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-body text-center p-4">
+            <h5 id="responseTitle" class="mb-3"></h5>
+            <p id="responseMessage"></p>
+            <button type="button" class="btn btn-secondary mt-2" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Our Menu Title -->
+    <div class="container pt-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center pt-5">
+          <h1 class="display-5 fw-bold mb-0 pt-5">Our Menu</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container my-5">
+      <!-- Tabs -->
+      <ul
+        class="nav nav-tabs justify-content-center mb-4"
+        id="menuTabs"
+        role="tablist"
+      >
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="burgers-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#burgers"
+            type="button"
+            role="tab"
+            aria-controls="burgers"
+            aria-selected="true"
+          >
+            Burgers
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="pizza-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#pizza"
+            type="button"
+            role="tab"
+            aria-controls="pizza"
+            aria-selected="false"
+          >
+            Pizza
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="sushi-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#sushi"
+            type="button"
+            role="tab"
+            aria-controls="sushi"
+            aria-selected="false"
+          >
+            juice
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="desserts-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#desserts"
+            type="button"
+            role="tab"
+            aria-controls="desserts"
+            aria-selected="false"
+          >
+            Fruit
+          </button>
+        </li>
+      </ul>
+
+      <!-- Tab Content -->
+      <div class="tab-content" id="menuTabsContent">
+        <!-- Burgers Tab -->
+        <div
+          class="tab-pane fade show active"
+          id="burgers"
+          role="tabpanel"
+          aria-labelledby="burgers-tab"
+        >
+          <div class="row">
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/B1.png"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Beef Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <button style="color: rgb(174, 177, 180);" class="btn btn-sm  rate-btn">
+                    Rate This Item ★
+                  </button>
+
+                  <!-- Rating Section (hidden by default) -->
+                  <div class="rating-section">
+                    <div class="mb-2">
+                      
+                      <input type="text" class="form-control rater-name" placeholder="Enter Your Name" />
+                    </div>
+                    <div class="mb-3">
+
+                      <div class="d-flex justify-content-between">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                        <button style="background-color: #ffa500;" class="btn  submit-rating">
+                          Rate
+                        </button>
+                      </div>
+                      
+                      <input type="hidden" class="selected-rating" value="0" />
+                     
+                    </div>
+                   
+                  </div>
+                  <p class="price">299</p>
+                  <button
+                    onclick="window.location.href='../Order/order.html'"
+                    class="btn btn-order"
+                  >
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 2 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/B2.png"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Cheese Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <button style="color: rgb(174, 177, 180);" class="btn btn-sm  rate-btn">
+                    Rate This Item ★
+                  </button>
+                  <!-- Rating Section (hidden by default) -->
+                  <div class="rating-section">
+                    <div class="mb-2">
+                      
+                      <input type="text" class="form-control rater-name" placeholder="Enter Your Name" />
+                    </div>
+                    <div class="mb-3">
+
+                      <div class="d-flex justify-content-between">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                        <button style="background-color: #ffa500;" class="btn  submit-rating">
+                          Rate
+                        </button>
+                      </div>
+                      
+                      <input type="hidden" class="selected-rating" value="0" />
+                     
+                    </div>
+                   
+                  </div>
+                  <p class="price">349</p>
+                  <button
+                    onclick="window.location.href='../Order/order.html'"
+                    class="btn btn-order"
+                  >
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 3 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/B3.png"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Juicy Lucy Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <button style="color: rgb(174, 177, 180);" class="btn btn-sm  rate-btn">
+                    Rate This Item ★
+                  </button>
+                  <!-- Rating Section (hidden by default) -->
+                  <div class="rating-section">
+                    <div class="mb-2">
+                      
+                      <input type="text" class="form-control rater-name" placeholder="Enter Your Name" />
+                    </div>
+                    <div class="mb-3">
+
+                      <div class="d-flex justify-content-between">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                        <button style="background-color: #ffa500;" class="btn  submit-rating">
+                          Rate
+                        </button>
+                      </div>
+                      
+                      <input type="hidden" class="selected-rating" value="0" />
+                     
+                    </div>
+                   
+                  </div>
+                  <p class="price">330</p>
+                  <button
+                    onclick="window.location.href='../Order/order.html'"
+                    class="btn btn-order"
+                  >
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 4 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/B4.png"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Vegitable Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <button style="color: rgb(174, 177, 180);" class="btn btn-sm  rate-btn">
+                    Rate This Item ★
+                  </button>
+                  <!-- Rating Section (hidden by default) -->
+                  <div class="rating-section">
+                    <div class="mb-2">
+                      
+                      <input type="text" class="form-control rater-name" placeholder="Enter Your Name" />
+                    </div>
+                    <div class="mb-3">
+
+                      <div class="d-flex justify-content-between">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                        <button style="background-color: #ffa500;" class="btn  submit-rating">
+                          Rate
+                        </button>
+                      </div>
+                      
+                      <input type="hidden" class="selected-rating" value="0" />
+                     
+                    </div>
+                   
+                  </div>
+                  <p class="price">250</p>
+                  <button
+                    onclick="window.location.href='../Order/order.html'"
+                    class="btn btn-order"
+                  >
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 5 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/B5.png"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Special Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <button style="color: rgb(174, 177, 180);" class="btn btn-sm  rate-btn">
+                    Rate This Item ★
+                  </button>
+                  <!-- Rating Section (hidden by default) -->
+                  <div class="rating-section">
+                    <div class="mb-2">
+                      
+                      <input type="text" class="form-control rater-name" placeholder="Enter Your Name" />
+                    </div>
+                    <div class="mb-3">
+
+                      <div class="d-flex justify-content-between">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                        <button style="background-color: #ffa500;" class="btn  submit-rating">
+                          Rate
+                        </button>
+                      </div>
+                      
+                      <input type="hidden" class="selected-rating" value="0" />
+                     
+                    </div>
+                   
+                  </div>
+                  <p class="price">500</p>
+                  <button
+                    onclick="window.location.href='../Order/order.html'"
+                    class="btn btn-order"
+                  >
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 6 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/B6.png"
+                  class="card-img-top"
+                  alt="Cheeseburger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Club Sandwitch</h5>
+                  <p class="card-text">Double beef patty with melted cheese.</p>
+                  <button style="color: rgb(174, 177, 180);" class="btn btn-sm  rate-btn">
+                    Rate This Item ★
+                  </button>
+                  <!-- Rating Section (hidden by default) -->
+                  <div class="rating-section">
+                    <div class="mb-2">
+                      
+                      <input type="text" class="form-control rater-name" placeholder="Enter Your Name" />
+                    </div>
+                    <div class="mb-3">
+
+                      <div class="d-flex justify-content-between">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                        <button style="background-color: #ffa500;" class="btn  submit-rating">
+                          Rate
+                        </button>
+                      </div>
+                      
+                      <input type="hidden" class="selected-rating" value="0" />
+                     
+                    </div>
+                   
+                  </div>
+                  <p class="price">450</p>
+                  <button
+                    onclick="window.location.href='../Order/order.html'"
+                    class="btn btn-order"
+                  >
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 7 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/B7.png"
+                  class="card-img-top"
+                  alt="Cheeseburger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Double Burger</h5>
+                  <p class="card-text">Double beef patty with melted cheese.</p>
+                  <button style="color: rgb(174, 177, 180);" class="btn btn-sm  rate-btn">
+                    Rate This Item ★
+                  </button>
+                  <!-- Rating Section (hidden by default) -->
+                  <div class="rating-section">
+                    <div class="mb-2">
+                      
+                      <input type="text" class="form-control rater-name" placeholder="Enter Your Name" />
+                    </div>
+                    <div class="mb-3">
+
+                      <div class="d-flex justify-content-between">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                        <button style="background-color: #ffa500;" class="btn  submit-rating">
+                          Rate
+                        </button>
+                      </div>
+                      
+                      <input type="hidden" class="selected-rating" value="0" />
+                     
+                    </div>
+                   
+                  </div>
+                  <p class="price">469</p>
+                  <button
+                    onclick="window.location.href='../Order/order.html'"
+                    class="btn btn-order"
+                  >
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 8 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/B8.png"
+                  class="card-img-top"
+                  alt="Cheeseburger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Normal Burger</h5>
+                  <p class="card-text">Double beef patty with melted cheese.</p>
+                  <button style="color: rgb(174, 177, 180);" class="btn btn-sm  rate-btn">
+                    Rate This Item ★
+                  </button>
+                  <!-- Rating Section (hidden by default) -->
+                  <div class="rating-section">
+                    <div class="mb-2">
+                      
+                      <input type="text" class="form-control rater-name" placeholder="Enter Your Name" />
+                    </div>
+                    <div class="mb-3">
+
+                      <div class="d-flex justify-content-between">
+                        <span class="star" data-value="1">☆</span>
+                        <span class="star" data-value="2">☆</span>
+                        <span class="star" data-value="3">☆</span>
+                        <span class="star" data-value="4">☆</span>
+                        <span class="star" data-value="5">☆</span>
+                        <button style="background-color: #ffa500;" class="btn  submit-rating">
+                          Rate
+                        </button>
+                      </div>
+                      
+                      <input type="hidden" class="selected-rating" value="0" />
+                     
+                    </div>
+                   
+                  </div>
+                  <p class="price">499</p>
+                  <button
+                    onclick="window.location.href='../Order/order.html'"
+                    class="btn btn-order"
+                  >
+                    Order Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Pizza Tab -->
+        <div
+          class="tab-pane fade"
+          id="pizza"
+          role="tabpanel"
+          aria-labelledby="pizza-tab"
+        >
+          <div class="row">
+            <!-- Pizza 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?pizza"
+                  class="card-img-top"
+                  alt="Pizza"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Margherita Pizza</h5>
+                  <p class="card-text">
+                    Fresh mozzarella, tomatoes, and basil.
+                  </p>
+                  <p class="price">8.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?burger"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Classic Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?burger"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Classic Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?burger"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Classic Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?burger"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Classic Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?burger"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Classic Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?burger"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Classic Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pizza 2 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?pepperoni-pizza"
+                  class="card-img-top"
+                  alt="Pepperoni Pizza"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Pepperoni Pizza</h5>
+                  <p class="card-text">Classic pepperoni with extra cheese.</p>
+                  <p class="price">9.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Juice Tab -->
+        <div
+          class="tab-pane fade"
+          id="sushi"
+          role="tabpanel"
+          aria-labelledby="sushi-tab"
+        >
+          <div class="row">
+            <!-- Sushi 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/J1.png"
+                  class="card-img-top"
+                  alt="Sushi"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Orange</h5>
+                  <p class="card-text">Assorted sushi rolls with soy sauce.</p>
+                  <p class="price">150</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/J2.png"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Mango</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">120</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/J3.png"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Strawberry</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">200</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/J4.png"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Lemon</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">180</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?burger"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Classic Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?burger"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Classic Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?burger"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Classic Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Sushi 2 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?sushi-roll"
+                  class="card-img-top"
+                  alt="Sushi Roll"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Sushi Roll</h5>
+                  <p class="card-text">Fresh salmon and avocado roll.</p>
+                  <p class="price">10.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fruits Tab -->
+        <div
+          class="tab-pane fade"
+          id="desserts"
+          role="tabpanel"
+          aria-labelledby="desserts-tab"
+        >
+          <div class="row">
+            <!-- Fruits 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/F1.png"
+                  class="card-img-top"
+                  alt="Chocolate Cake"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Green Dish</h5>
+                  <p class="card-text">
+                    Decadent chocolate cake with frosting.
+                  </p>
+                  <p class="price">258</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/F2.png"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Mix of All</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">299</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/F3.png"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Slices</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">300</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="../Images/Menu Images/F4.png"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Yellow Dish</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">450</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?burger"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Classic Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?burger"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Classic Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Burger 1 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?burger"
+                  class="card-img-top"
+                  alt="Burger"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Classic Burger</h5>
+                  <p class="card-text">
+                    Juicy beef patty with fresh veggies and cheese.
+                  </p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+            <!-- Dessert 2 -->
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img
+                  src="https://source.unsplash.com/400x300/?cheesecake"
+                  class="card-img-top"
+                  alt="Cheesecake"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Cheesecake</h5>
+                  <p class="card-text">Creamy cheesecake with berry topping.</p>
+                  <p class="price">5.99</p>
+                  <button class="btn btn-order">Order Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-5 bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h5 class="fw-bold mb-3">Luminary</h5>
+            <p>
+              Delivering exceptional dining experiences since 2010. Our passion
+              for food and service shines in every dish we prepare.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h5 class="fw-bold mb-3">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="../Home/Home.html"
+                  class="text-white text-decoration-none"
+                  >Home</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="../About/About.html"
+                  class="text-white text-decoration-none"
+                  >About Us</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="../Menu/Menu.html"
+                  class="text-white text-decoration-none"
+                  >Menu</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="../Home/Home.html"
+                  class="text-white text-decoration-none"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="fw-bold mb-3">Contact Info</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i> Debre Berhan
+                University, Ethiopia
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone me-2"></i> +251945801419
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope me-2"></i> info@markan.com
+              </li>
+              <li>
+                <i class="fas fa-clock me-2"></i> Open: 1:30 - 5:00 Ethiopian
+                Time
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4 bg-secondary" />
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy; 2025 Markan. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Menu/Menu.js"></script>
+  </body>
+</html>

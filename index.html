@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End-main/Home/Home.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <!-- Audio elements -->
+    <audio id="welcomeAudio">
+      <source src="../Audio For Blinds/wellcome.m4a" type="audio/mpeg" />
+    </audio>
+    <audio id="menuExitAudio">
+      <source src="../Audio For Blinds/menu_exit.m4a" type="audio/mpeg" />
+    </audio>
+    <audio id="menuListAudio">
+      <source src="../Audio For Blinds/menu_list.m4a" type="audio/mpeg" />
+    </audio>
+    <audio id="blockNumberAudio">
+      <source src="../Audio For Blinds/block no.m4a" type="audio/mpeg" />
+    </audio>
+    <audio id="roomNumberAudio">
+      <source src="../Audio For Blinds/Dorm Number.m4a" type="audio/mpeg" />
+    </audio>
+    <audio id="orderSuccessAudio">
+      <source src="../Audio For Blinds/sucess.m4a" type="audio/mpeg" />
+    </audio>
+
+    <div id="soundControl">
+      <p id="countdown">Sound will play in <span>5</span> seconds...</p>
+      <p id="playingText">Playing Now...</p>
+      <button id="stopSoundButton">X</button>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#" style="font-family: 'Lacquer'"
+          >Luminary Fast Foods</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End-main/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End-main/Menu/Menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End-main/About/About.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row">
+          <!-- Left Div: Text Content -->
+          <div class="col-md-6 hero-left">
+            <h1 id="hero-heading">Welcome to Luminary</h1>
+            <p id="hero-description">
+              Delicious food delivered to your doorstep. Explore More and enjoy
+              the best meals in University!
+            </p>
+            <a href="#menu" class="btn btn-primary bg-dark">Explore More</a>
+          </div>
+
+          <!-- Right Div: Image -->
+          <div class="col-md-6 hero-right">
+            <img
+              id="hero-image"
+              src="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End-main/Images/Home Page Hero/Sliding Image 1.png"
+              alt="Burger Image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section py-6">
+      <div class="container">
+        <h1 class="text-center mb-5">Our Menu</h1>
+        <div class="row justify-content-center align-items-center">
+          <!-- Menu Card 1 -->
+          <div class="col-md-3 mb-4">
+            <div class="card shadow">
+              <img
+                src="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End-main/Images/card burger.png"
+                class="card-img-top"
+                alt="Burger"
+              />
+              <div class="card-body">
+                <i class="fas fa-hamburger icon"></i>
+                <h5 class="card-title">Burger</h5>
+                <p class="card-text">
+                  Juicy beef burger with fresh veggies and cheese.
+                </p>
+                <a href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/Menu/Menu.html" class="btn btn-primary"
+                  >Explore More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Menu card 2 -->
+          <div class="col-md-3 mb-4">
+            <div class="card shadow">
+              <img
+                src="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End-main/Images/card pizza.png"
+                class="card-img-top"
+                alt="Pizza"
+              />
+              <div class="card-body">
+                <i class="fas fa-pizza-slice icon"></i>
+                <h5 class="card-title">Pizza</h5>
+                <p class="card-text">
+                  Classic Italian pizza with your favorite toppings.
+                </p>
+                <a href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/Menu/Menu.html" class="btn btn-primary"
+                  >Explore More</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Menu card 3 -->
+          <div class="col-md-3 mb-4">
+            <div class="card shadow">
+              <img
+                src="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End-main/Images/card pasta.png"
+                class="card-img-top"
+                alt="Pasta"
+              />
+              <div class="card-body">
+                <i class="fas fa-utensils icon"></i>
+                <h5 class="card-title">Pasta</h5>
+                <p class="card-text">
+                  Creamy pasta with a rich and flavorful sauce.
+                </p>
+                <a href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/Menu/Menu.html" class="btn btn-primary"
+                  >Explore More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Row 2 -->
+        <div class="row justify-content-center align-items-center">
+          <!-- Menu card 4 -->
+          <div class="col-md-3 mb-4">
+            <div class="card shadow">
+              <img src="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End-main/Images/salad.png" class="card-img-top" alt="Salad" />
+              <div class="card-body">
+                <i class="fas fa-leaf icon"></i>
+                <h5 class="card-title">Fruit</h5>
+                <p class="card-text">
+                  Fresh and healthy salad with a variety of toppings.
+                </p>
+                <a href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/Menu/Menu.html" class="btn btn-primary"
+                  >Explore More</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Menu card 5 -->
+          <div class="col-md-3 mb-4">
+            <div class="card shadow">
+              <img src="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End-main/Images/sushi.png" class="card-img-top" alt="Sushi" />
+              <div class="card-body">
+                <i class="fas fa-cookie icon"></i>
+                <h5 class="card-title">Chips</h5>
+                <p class="card-text">
+                  Authentic Japanese sushi made with fresh ingredients.
+                </p>
+                <a href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/Menu/Menu.html" class="btn btn-primary"
+                  >Explore More</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Menu card 6 -->
+          <div class="col-md-3 mb-4">
+            <div class="card shadow">
+              <img
+                src="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End-main/Images/desert.png"
+                class="card-img-top"
+                alt="Dessert"
+              />
+              <div class="card-body">
+                <i class="fas fa-ice-cream icon"></i>
+                <h5 class="card-title">Donuts</h5>
+                <p class="card-text">
+                  Sweet and delicious desserts to satisfy your cravings.
+                </p>
+                <a href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/Menu/Menu.html" class="btn btn-primary"
+                  >Explore More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Right Column: Image -->
+          <div class="col-md-6 d-none d-md-block d-lg-block">
+            <img src="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End-main/Images/Cheif.png" class="img-fluid" alt="About Us" />
+          </div>
+          <!-- Left Column: Text Content -->
+          <div class="col-md-6">
+            <i class="fas fa-utensils icon"></i>
+            <h2>About Us</h2>
+            <p>
+              At <strong>Luminary</strong>, we believe in delivering the best
+              food experience to our customers. Founded in 2010, our journey
+              began with a small family-owned restaurant, and today we have
+              grown into a beloved brand known for our delicious and fresh
+              meals.
+            </p>
+            <p>
+              Our chefs use only the finest ingredients to create mouth-watering
+              dishes that bring people together. Whether it's a juicy burger, a
+              classic pizza, or creamy pasta, every dish is prepared with love
+              and passion.
+            </p>
+            <!-- Buttons -->
+            <a href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/About/About.html" class="btn btn-primary">Our Story</a>
+            <a href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/About/About.html" class="btn btn-outline-light"
+              >Meet the Team</a
+            >
+            <a href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/Menu/Menu.html" class="btn btn-outline-light"
+              >View Menu</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section">
+      <div class="container align-items-center">
+        <h2>Contact Us</h2>
+        <div class="row align-items-center">
+          <!-- Contact Form -->
+          <div class="col-md-3">
+            <div class="form-container">
+              <form>
+                <div class="mb-3">
+                  <label for="name" class="form-label">
+                    <i class="fas fa-user icon"></i>Name
+                  </label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">
+                    <i class="fas fa-envelope icon"></i>Email
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">
+                    <i class="fas fa-comment icon"></i>Message
+                  </label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+              </form>
+            </div>
+          </div>
+          <!-- Map -->
+          <div class="col-md-8 pt-sm-6 pt-md-0">
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2920.1231549647982!2d39.51999744410876!3d9.654746838609702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2set!4v1742090606341!5m2!1sen!2set"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h5 class="fw-bold mb-3">Luminary</h5>
+            <p>
+              Delivering exceptional dining experiences since 2010. Our passion
+              for food and service shines in every dish we prepare.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-white me-3"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h5 class="fw-bold mb-3">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/index.html"
+                  class="text-white text-decoration-none"
+                  >Home</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/About/About.html"
+                  class="text-white text-decoration-none"
+                  >About Us</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/Menu/Menu.html"
+                  class="text-white text-decoration-none"
+                  >Menu</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/Home/Home.html"
+                  class="text-white text-decoration-none"
+                  >Contact</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="../Amharic Version/Home/Home.html"
+                  class="text-white text-decoration-none"
+                  >አማርኛ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="fw-bold mb-3">Contact Info</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i> Debre Berhan,
+                Ethiopia
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-phone me-2"></i> +251945801419
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope me-2"></i> info@markan.com
+              </li>
+              <li>
+                <i class="fas fa-clock me-2"></i> Open: 1:30 - 5:00 Ethiopian
+                Time
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4 bg-secondary" />
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy; 2025 Luminary. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="../Small-Restaurant-menu-and-Delivery-Service-Platform-Front-End/Home/Home.js"></script>
+  </body>
+</html>
